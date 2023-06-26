@@ -1,1 +1,1 @@
-![Banner Repo Epicode](https://github.com/andbardii/pot/assets/126244632/18824d07-7d59-4f2e-9d95-199e79467f19)
+![Banner Repo Pot](https://github.com/andbardii/pot/assets/126244632/cd3d60ef-a5d1-425e-a28c-d6db56277b68)

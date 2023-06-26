@@ -1,3 +1,4 @@
+![Banner Weather Pot](https://github.com/andbardii/pot/assets/126244632/2827591a-35c9-4713-9a25-3cca7c82c09c)
 # Weather
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.3.

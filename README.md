@@ -1,1 +1,1 @@
-![Banner Repo Pot](https://github.com/andbardii/pot/assets/126244632/cd3d60ef-a5d1-425e-a28c-d6db56277b68)
+![Weather App Banner](https://github.com/andbardii/weather-angular-app/assets/126244632/f051d7a0-b6b0-4468-9fd7-a7dfd4411fb8)

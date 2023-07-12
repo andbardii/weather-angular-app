@@ -1,5 +1,5 @@
 .box{
-  width: 600px;
+  width: 400px;
   height: 80vh;
   background-color: darkslateblue;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
@@ -47,6 +47,15 @@
   }
 
   .low{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 50%;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
 
     .label{
       color: white;
@@ -74,7 +83,7 @@
           align-items: center;
 
           svg{
-            width: 1em;
+            width: 1.5em;
           }
           span{
             color: white;

@@ -1,21 +1,25 @@
-<div class="box">
+<div class="searchbar">
+  <form #form="ngForm" (submit)="search()">
+    <input type="text" placeholder="Search city" name="city" [(ngModel)]="city">
+  </form>
+</div>
+<div class="box" *ngIf="weather">
   <div class="upp">
-    <!-- <img src="https://images.unsplash.com/photo-1581224463294-908316338239?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c3VufGVufDB8fDB8fHww&auto=format&fit=crop&w=1200&q=60" alt="Day img"> -->
-    <img src="https://images.unsplash.com/photo-1570751485906-b0bbe415db74?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=816&q=80" alt="Night img">
+    <img src="https://images.unsplash.com/photo-1581224463294-908316338239?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c3VufGVufDB8fDB8fHww&auto=format&" alt="Day img">
 
     <div class="data">
       <div class="location">
-        Bologna
+        {{weather.name}}
       </div>
       <div class="temperature">
-        {{ 14.40 | number: '1.0-0' }}°C
+        {{ weather.main.temp * 0.1| number: '1.0-0' }}°C
+      </div>
+      <div class="description">
+        {{ weather.weather[0].description}}
       </div>
     </div>
   </div>
   <div class="low">
-    <div class="label">
-      More Information
-    </div>
     <div class="data">
       <div class="info">
         <div class="info-label">
@@ -23,10 +27,10 @@
             <path d="M5 12.5a1.5 1.5 0 1 1-2-1.415V9.5a.5.5 0 0 1 1 0v1.585A1.5 1.5 0 0 1 5 12.5z"/>
             <path d="M1 2.5a2.5 2.5 0 0 1 5 0v7.55a3.5 3.5 0 1 1-5 0V2.5zM3.5 1A1.5 1.5 0 0 0 2 2.5v7.987l-.167.15a2.5 2.5 0 1 0 3.333 0L5 10.486V2.5A1.5 1.5 0 0 0 3.5 1zm5 1a.5.5 0 0 1 .5.5v1.293l.646-.647a.5.5 0 0 1 .708.708L9 5.207v1.927l1.669-.963.495-1.85a.5.5 0 1 1 .966.26l-.237.882 1.12-.646a.5.5 0 0 1 .5.866l-1.12.646.884.237a.5.5 0 1 1-.26.966l-1.848-.495L9.5 8l1.669.963 1.849-.495a.5.5 0 1 1 .258.966l-.883.237 1.12.646a.5.5 0 0 1-.5.866l-1.12-.646.237.883a.5.5 0 1 1-.966.258L10.67 9.83 9 8.866v1.927l1.354 1.353a.5.5 0 0 1-.708.708L9 12.207V13.5a.5.5 0 0 1-1 0v-11a.5.5 0 0 1 .5-.5z"/>
           </svg>
-          <span>min</span>
+          <span>min temp</span>
         </div>
         <div class="info-value">
-          30°C
+          {{weather.main.temp_min * 0.1| number: '1.0-0' }}°C
         </div>
       </div>
       <div class="info">
@@ -35,10 +39,10 @@
             <path d="M5 12.5a1.5 1.5 0 1 1-2-1.415V2.5a.5.5 0 0 1 1 0v8.585A1.5 1.5 0 0 1 5 12.5z"/>
             <path d="M1 2.5a2.5 2.5 0 0 1 5 0v7.55a3.5 3.5 0 1 1-5 0V2.5zM3.5 1A1.5 1.5 0 0 0 2 2.5v7.987l-.167.15a2.5 2.5 0 1 0 3.333 0L5 10.486V2.5A1.5 1.5 0 0 0 3.5 1zm5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0v-1a.5.5 0 0 1 .5-.5zm4.243 1.757a.5.5 0 0 1 0 .707l-.707.708a.5.5 0 1 1-.708-.708l.708-.707a.5.5 0 0 1 .707 0zM8 5.5a.5.5 0 0 1 .5-.5 3 3 0 1 1 0 6 .5.5 0 0 1 0-1 2 2 0 0 0 0-4 .5.5 0 0 1-.5-.5zM12.5 8a.5.5 0 0 1 .5-.5h1a.5.5 0 1 1 0 1h-1a.5.5 0 0 1-.5-.5zm-1.172 2.828a.5.5 0 0 1 .708 0l.707.708a.5.5 0 0 1-.707.707l-.708-.707a.5.5 0 0 1 0-.708zM8.5 12a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0v-1a.5.5 0 0 1 .5-.5z"/>
           </svg>
-          <span>max</span>
+          <span>max temp</span>
         </div>
         <div class="info-value">
-          50°C
+          {{weather.main.temp_max*0.1 | number: '1.0-0' }}°C
         </div>
       </div>
       <div class="info">
@@ -49,7 +53,7 @@
           <span>humidity</span>
         </div>
         <div class="info-value">
-          99%
+          {{weather.main.humidity}}%
         </div>
       </div>
       <div class="info">
@@ -60,7 +64,7 @@
           <span>wind</span>
         </div>
         <div class="info-value">
-          1 km/h
+          {{weather.wind.speed}} km/h
         </div>
       </div>
     </div>

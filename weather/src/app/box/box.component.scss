@@ -1,7 +1,23 @@
+.searchbar{
+  margin-bottom: 1em;
+  text-align: center;
+
+  input{
+    background-color: rgba(0,0,0,0.1);
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    padding: 1em;
+    color: white;
+    font-size: 0.8em;
+    text-align: center;
+  }
+}
+
 .box{
-  width: 400px;
+  width: 500px;
   height: 80vh;
-  background-color: darkslateblue;
+  background-color:rgb(149, 67, 67);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   border-radius: 25px;
 
@@ -43,7 +59,14 @@
         font-size: 4em;
         font-weight: 900;
       }
+      .description{
+        text-align: center;
+        color: rgba($color: #ffffff, $alpha: 0.8);
+        font-size: 0.7em;
+        margin-top: 3em;
+      }
     }
+
   }
 
   .low{
